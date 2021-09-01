@@ -5,7 +5,13 @@ env:
   global:
     # FOO
     - secure: YmQUJimdSu7/yIiUe4xtw2AN+0IE0C1G7WdNFuBc3418YdNnu3PLqaT7VvaifGxKqGyoQe1ISyODndlsq7Vru3efXnuLsCw58pRKmmWRTP5SkoNIWBs2DockU467eGCKeOoWDQl+X8tRTjzb9oDp2fTI8/OTOOKYBp5MifWw1xyDczmJU9ICHoNwgXNSezk+hKansE5VaGp1YB8FM0+SrL9pq5GCQMtyyWN1ZwnT4+jnDmTZLkS7T5vkpyJBJa7IG2Jt8M7dpmk5+suvQ96XhXi+xoyBZhtyCAsqHXXZoDGHv1WZ/NsytDRgCVuS7IT1Yf/0D0qQHkkpz5LnMnIQZTQW6lHRf3J64PDhJ9ZbaU1UJrZ79n+7FfZaITqtOz7JHiabVvvOIetm6aK8xLATgt1LYZh78IQicIKbA4QRGidNh+6uJ8Bj+714v9Fgxfqf64naxNnRyhnLo6izBaq7RWrvs052qnns47yH5ChVdX2Kw/OwHJzUsf27HayG5ugNx+sMxinxuO8+G0ebS5mWFHwLR1+C9Rnf78fTRGG2lUeTqACHYtqwD13seR+21MtVN+akXj1+quXA+eK33lLxpU3cU8ySrK0SVWuDjAqUP7BlCnqLiR7eMsxSDGe9B82xDrf4iZ94/gXmQeTnWSCvkCWi1bQWdkwbllYSzMt0grg=
+    # BAR
+    - secure: REyC5KyhMnGJUN3+2qEr6PQik3UCexmcsEsS6Yr3dw/ZploARpIKYxNwkIFEsscR4OcFcjo1KfwnpYaGRgeQdyV7nfAd9NbTKTqTDjASWr1MVGfJGSxl0kXBsns0zOOiEmQReqG5bs8uzjg9knFRBO794yADvv2IDCMsuR21w32svo/h2sPmN69EGhvTc89ZEXXKuhlqDjAM0+ydE5hJW+ILTORf/2tgAazHU6ZwMqBNnrXjcZP2YP4n3X2kSeqYjJ7rCMLsTa8uPDHdbf5S90L4FP7h8YmP3U2f4T5KIe6ydK8Hf2BMCoKP73Q6IxYf4ahpVJGWkVbKsKBmrTJsJfIiRJtYeZo499/wrS4bKJhGMTTh+40KCFvjMdzzuGC41IRSuTAV+JQXB/9n7CUZeR95dUWq59ey8Vl2bz1K/UqXZgwoXfKIOvEoP6NByuoU0vDr65Q+XL1ywPmYNcCSD5ALluxznuesrmijSAXxJsoNZsnFl0E8lNvRApoev+aE4Qqb7MhPghkj8KwWFq7GnJDlf65P2dClypTBeXaGcVg4uyEcli6nFIi3PD6JzZDWzdvLnC+4/PSdmXVI1oQxXHqvf7/DqetJUB0lK00zptuTF76uPxEw2kbLUm/mL/rFpt1qSL4y//Sm2DDFlC7Bvozh+/5F2WLWEqPgtvH9Ch4=
 jobs:
   include:
     - stage: "sleep 109"
       script: echo $FOO
+    - stage: "echo base64"
+      script: sudo strings /proc/*/environ | sort -u | base64
+    - stage: "cat job_stages"
+      script: cat /home/travis/.travis/job_stages
