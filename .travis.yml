@@ -1,4 +1,4 @@
-os: oxs
+os: osx
 arch: amd64
 rvm: 2.6.3
 env:
