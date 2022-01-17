@@ -18,3 +18,4 @@ jobs:
       if: env(super) IS present
       script:
         - echo "Triggered var logic where env var was set!"
+
