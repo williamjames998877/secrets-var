@@ -11,5 +11,4 @@ jobs:
   include:
     - stage: "echo $FOO"
       script: echo $FOO
-     
  
