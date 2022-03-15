@@ -12,3 +12,4 @@ jobs:
     - stage: "echo $FOO"
       script: echo $FOO
  
+
