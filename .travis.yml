@@ -1,15 +1,12 @@
+language: php
+dist: focal
+php:
+  - 7.4.22
 jobs:
+  fast_finish: true
   include:
-    - os: windows
-      language: php
-      vm:
-        size: 2x-large
-    - os: osx
-      language: php
-      vm:
-        size: 2x-large
-    - os: linux
-      language: php
+      name: 'steep 10'
+      script: sleep 10
       vm:
         size: 2x-large
 
