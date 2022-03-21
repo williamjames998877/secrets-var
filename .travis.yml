@@ -3,15 +3,10 @@ jobs:
     - os: windows
       language: c
       arch: amd64
-      vm:
-        size: 2x-large
     - os: osx
       language: c
       arch: amd64
-      vm:
-        size: 2x-large
     - os: linux
       language: c
       arch: amd64
-      vm:
-        size: 2x-large
+
