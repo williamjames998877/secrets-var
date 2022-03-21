@@ -1,15 +1,15 @@
 jobs:
   include:
     - os: windows
-      language: c
+      language: php
       vm:
         size: 2x-large
     - os: osx
-      language: c
+      language: php
       vm:
         size: 2x-large
     - os: linux
-      language: c
+      language: php
       vm:
         size: 2x-large
 
